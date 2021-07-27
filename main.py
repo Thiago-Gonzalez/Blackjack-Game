@@ -73,11 +73,11 @@ def start_game():
     for card in player_cards_display:
       print(card)
     input("Press enter. ")
-    os.system('clear') or None
+    os.system('cls')
     print("Dealer cards: ")
     print(f"{dealer_cards_display[0]}{cards_ascii[52]}")
     input("Press enter. ")
-    os.system('clear') or None
+    os.system('cls')
     print(f"Your score: {sum(player_cards)}\tDealer's first card score: {dealer_cards[0]}")
 
     if player_score == 0 or dealer_score == 0 or player_score > 21:
@@ -88,10 +88,10 @@ def start_game():
       if game_option == "1":
           player_cards.append(deal_card())
           player_cards_display.append(random.choice(cv[player_cards[-1]]))
-          os.system('clear') or None
+          os.system('cls')
       else:
         input("Press enter.")
-        os.system('clear') or None
+        os.system('cls')
         game_over = True
       
   while dealer_score != 0 and dealer_score < 17 and len(dealer_cards) <= 5:
@@ -103,12 +103,12 @@ def start_game():
   for card in player_cards_display:
     print(card)
   input("Press enter.")
-  os.system('clear') or None
+  os.system('cls')
   print("Dealer's final cards: ")
   for card in dealer_cards_display:
     print(card)
   input("Press enter.")
-  os.system('clear') or None
+  os.system('cls')
   print(f"Your final score: {sum(player_cards)}\tDealer's final score: {sum(dealer_cards)}")
   print(compare(player_score, dealer_score))
 
@@ -117,5 +117,5 @@ read_rules = input("Do you want to briefly read the Blackjack game rules before 
 if read_rules == "yes":
   print(f"Blackjack rules: \nCards: {rules['Cards']}\nGame: {rules['Game']}")
 while input("Start a game of Blackjack?\nType 'yes' or 'no': ") == 'yes':
-  os.system('clear') or None
+  os.system('cls')
   start_game()
